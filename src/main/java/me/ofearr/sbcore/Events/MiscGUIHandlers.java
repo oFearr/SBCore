@@ -71,7 +71,7 @@ public class MiscGUIHandlers implements Listener {
             }
             e.setCancelled(true);
 
-        } else if(e.getView().getTitle().equalsIgnoreCase(StringUtils.translate("Collections"))){
+        } else if(e.getView().getTitle().equalsIgnoreCase(StringUtils.translate("Collections")) || e.getView().getTitle().contains(StringUtils.translate("Collection"))){
 
             try {
                 CategoryCollectionMenu categoryCollectionMenu = new CategoryCollectionMenu();

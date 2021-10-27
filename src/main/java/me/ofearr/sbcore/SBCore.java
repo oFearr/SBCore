@@ -278,7 +278,7 @@ public final class SBCore extends JavaPlugin {
     }
 
     private void registerEvents(){
-        Bukkit.getPluginManager().registerEvents(new PlayerDataHandler(this), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerDataHandler(), this);
         Bukkit.getPluginManager().registerEvents(new DamageCalculationEvent(this), this);
         Bukkit.getPluginManager().registerEvents(new ActionBarManager(this), this);
         Bukkit.getPluginManager().registerEvents(new MiscEvents(this), this);

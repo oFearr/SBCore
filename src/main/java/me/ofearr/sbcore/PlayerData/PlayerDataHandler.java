@@ -2,10 +2,8 @@ package me.ofearr.sbcore.PlayerData;
 
 import me.ofearr.sbcore.Collections.Collection;
 import me.ofearr.sbcore.Collections.CollectionsManager;
-import me.ofearr.sbcore.CustomMobs.Mobs.IceWalker;
 import me.ofearr.sbcore.Dwarven.DwarvenManager;
 import me.ofearr.sbcore.Dwarven.Upgrades.DwarvenUpgrade;
-import me.ofearr.sbcore.SBCore;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,16 +11,10 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.List;
 
 public class PlayerDataHandler implements Listener {
-
-    private static SBCore plugin;
-    public PlayerDataHandler(SBCore sbCore) {
-        this.plugin = sbCore;
-    }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerJoinCreateData(PlayerJoinEvent e){
@@ -91,22 +83,6 @@ public class PlayerDataHandler implements Listener {
         }
 
         dataManager.saveConfig();
-
-       /* new BukkitRunnable() {
-            @Override
-            public void run() {
-                new CustomTabList().displayDwarvenTablist(player);
-
-                new BukkitRunnable() {
-                    @Override
-                    public void run() {
-                        new CustomTabList().sendTablistWipePacket(player);
-                    }
-                }.runTaskLater(plugin, 100L);
-
-            }
-        }.runTaskLater(plugin, 1L); */
-
 
     }
 

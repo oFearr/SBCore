@@ -3,6 +3,7 @@ package me.ofearr.sbcore.GUI.CollectionInventories;
 import me.ofearr.sbcore.Collections.Collection;
 import me.ofearr.sbcore.Collections.CollectionCategories;
 import me.ofearr.sbcore.Collections.CollectionsManager;
+import me.ofearr.sbcore.Utils.NBTEditor;
 import me.ofearr.sbcore.Utils.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

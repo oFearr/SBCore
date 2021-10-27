@@ -129,6 +129,12 @@ island-pads:
   leap_gold_mine:
     warp-to: goldmine
 
+#==================================================================#
+#  ------------- Custom Mob Spawning Related Settings ------------ #
+#==================================================================#
+
+#These mob spawns are repeated every 30s
+
 mob-spawns:
   ice_walker:
     spawn-points:
