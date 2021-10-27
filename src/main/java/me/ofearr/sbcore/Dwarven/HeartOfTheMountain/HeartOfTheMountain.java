@@ -34,7 +34,7 @@ public class HeartOfTheMountain {
             case 2:
                 message = StringUtils.translate("&5========================================" +
                         "\n &5&lHEART OF THE MOUNTAIN &f&lTIER " + level + "" +
-                        "\n" +
+                        "\n " +
                         "\n &a&lRewards" +
                         "\n  &8+&51 Token of the Mountain" +
                         "\n  &8+&6Access to The Forge" +
