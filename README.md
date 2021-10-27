@@ -9,4 +9,5 @@ Similar to a large Skyblock server which also has other mini games (Hy...) - Thi
 ![Image](https://i.imgur.com/6vQlb5b.png)
 ![Image](https://i.imgur.com/UzAGydt.png)
 ![Image](https://i.imgur.com/IUr71oV.png)
+![Image](https://i.imgur.com/7SQTcEp.jpg)
 ![Image](https://i.imgur.com/JDEsT0i.png)
