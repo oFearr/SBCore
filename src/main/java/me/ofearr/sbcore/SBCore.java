@@ -23,6 +23,7 @@ import me.ofearr.sbcore.Dwarven.HeartOfTheMountain.HotMMenuHandler;
 import me.ofearr.sbcore.Events.ActionBarManager;
 import me.ofearr.sbcore.Events.DamageCalculationEvent;
 import me.ofearr.sbcore.Events.MiscEvents;
+import me.ofearr.sbcore.Events.MiscGUIHandlers;
 import me.ofearr.sbcore.MapManagement.GameMap;
 import me.ofearr.sbcore.MapManagement.MapGeneration;
 import me.ofearr.sbcore.PlayerData.PlayerDataHandler;
@@ -288,6 +289,7 @@ public final class SBCore extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new DwarvenCommissionsGUIHandler(this), this);
         Bukkit.getPluginManager().registerEvents(new ForgeGUIHandler(this), this);
         Bukkit.getPluginManager().registerEvents(new ShopGUIHandler(this), this);
+        Bukkit.getPluginManager().registerEvents(new MiscGUIHandlers(this), this);
 
         Bukkit.getPluginManager().registerEvents(new MiningCollectionsHandler(this), this);
     }

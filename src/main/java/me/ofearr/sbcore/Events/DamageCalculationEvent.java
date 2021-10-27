@@ -1,6 +1,5 @@
 package me.ofearr.sbcore.Events;
 
-import me.ofearr.playerstatscore.API.StatAPIManager;
 import me.ofearr.sbcore.SBCore;
 import me.ofearr.sbcore.Utils.StatUtils;
 import me.ofearr.sbcore.Utils.StringUtils;
@@ -17,9 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class DamageCalculationEvent implements Listener {
 
@@ -28,10 +25,6 @@ public class DamageCalculationEvent implements Listener {
     public DamageCalculationEvent(SBCore instance){
         this.plugin = instance;
     }
-
-    private static ArrayList<UUID> criticalHits = new ArrayList<>();
-
-    private StatAPIManager statAPIManager = new StatAPIManager();
 
     private String criticalHitEffect(String s){
         char[] chars = new char[]{'f', 'e', '6', 'c', 'c'};
@@ -45,20 +38,6 @@ public class DamageCalculationEvent implements Listener {
             }
         }
         return ChatColor.translateAlternateColorCodes('&', returnValue);
-    }
-
-    public void logCriticalHit(Player player){
-        if(!criticalHits.contains(player.getUniqueId())) criticalHits.add(player.getUniqueId());
-    }
-
-    public void removeCriticalHit(Player player){
-        if(criticalHits.contains(player.getUniqueId())) criticalHits.remove(player.getUniqueId());
-    }
-
-    public static boolean wasCriticalHit(Player player){
-        if(criticalHits.contains(player.getUniqueId())) return true;
-
-        return false;
     }
 
 
@@ -163,13 +142,6 @@ public class DamageCalculationEvent implements Listener {
             } else {
                 player = (Player) e.getDamager();
             }
-
-          /*  if(e.getEntity() instanceof Player){
-                e.setCancelled(true);
-                return;
-            } */
-
-          //  if(e.getDamager().hasMetadata("NPC")) return;
 
             if(e.getEntity() instanceof ArmorStand) return;
             if(e.getEntity() instanceof ItemFrame) return;

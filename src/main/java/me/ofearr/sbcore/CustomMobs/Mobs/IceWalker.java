@@ -37,7 +37,6 @@ public class IceWalker implements CustomMob {
     }
 
     public void spawn(Location location){
-    //   NPC npc = registry().createNPC(EntityType.PLAYER, "");
        NPC npc = registry().createNPC(EntityType.PLAYER, UUID.randomUUID(), 999, "");
 
        Set<EntityType> set = new HashSet<>();
