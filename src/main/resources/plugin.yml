@@ -1,0 +1,30 @@
+name: SBCore
+version: ${project.version}
+main: me.ofearr.sbcore.SBCore
+depend: [PlayerStatsCore, WorldGuard, WorldEdit, MVdWPlaceholderAPI, Citizens]
+commands:
+  sbmenu:
+    aliases:
+      - skyblockmenu
+      - opensbmenu
+      - statsmenu
+    description: Command used to access the skyblock menu.
+  givecollectionprogress:
+  opentelekinesisapplicationmenu:
+  setcustomworldspawn:
+  addwarp:
+  warp:
+    aliases:
+      - sbwarp
+  sbreload:
+    aliases:
+      - sbrld
+      - reloadsb
+  opendeepcavernsliftmenu:
+  opendwarvencommissionsmenu:
+  openshopmenu:
+  openforgemenu:
+  hotm:
+    aliases:
+      - heartofthemountain
+      - viewhotm

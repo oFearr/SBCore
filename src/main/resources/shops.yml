@@ -1,0 +1,33 @@
+shops:
+  bubu:
+    title: "Bubu's Shop"
+    items:
+      fractured_mithril_pickaxe:
+        amount: 1
+        coins: 10000
+        items:
+          air: 0
+      bandaged_mithril_pickaxe:
+        amount: 1
+        coins: 125000
+        items:
+          mithril: 200
+      titanium_pickaxe:
+        amount: 1
+        coins: 1000000
+        items:
+          bejeweled_handle: 1
+          titanium: 100
+      refined_titanium_pickaxe:
+        amount: 1
+        coins: 0
+        items:
+          titanium_pickaxe: 1
+          refined_titanium: 3
+      biofuel:
+        amount: 1
+        coins: 20000
+        items:
+          air: 0
+salable-items:
+  mithril: 9

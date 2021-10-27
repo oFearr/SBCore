@@ -1,0 +1,45 @@
+package me.ofearr.sbcore.Commands;
+
+import me.ofearr.sbcore.GUI.DeepCavernsLiftGUI;
+import me.ofearr.sbcore.GUI.TelekinesisApplicationGUI;
+import me.ofearr.sbcore.Utils.StringUtils;
+import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class OpenDeepCavernsLiftMenuCMD implements CommandExecutor {
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(command.getName().equalsIgnoreCase("opendeepcavernsliftmenu")){
+            if(sender.hasPermission("sbcore.deepliftmenu")){
+                if(args.length >= 1){
+                    String playerName = args[0];
+
+                    if(Bukkit.getPlayer(playerName) != null){
+                        Player player = Bukkit.getPlayer(playerName);
+
+                        player.openInventory(new DeepCavernsLiftGUI().GUI(player));
+                    } else {
+
+                        sender.sendMessage(StringUtils.translate("&b&lSkyBlock &8>> &cThat player does not exist!"));
+                    }
+
+                } else {
+
+                    if(sender instanceof Player){
+
+                        ((Player) sender).openInventory(new DeepCavernsLiftGUI().GUI((Player) sender));
+                    }
+                }
+            }else {
+                sender.sendMessage(StringUtils.translate("&cInsufficient permissions!"));
+            }
+        }
+
+        return false;
+    }
+
+}

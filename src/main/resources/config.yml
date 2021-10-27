@@ -1,0 +1,162 @@
+#Sent in front of every message sent to the players (excluding rare drop messages)
+prefix: '&b&lSkyBlock &8>'
+#Displayed when a player runs '/pl' or '/plugins'
+server-version: '0.0.1'
+
+#Block IDs including customs
+block-hardness-settings:
+  coal_ore:
+    hardness: 2
+    strength: 20
+    #Block put in it's place when broken (vanilla block ID)
+    replace-with: 'cobble_stone'
+    #Time(s) it takes for this block to regenerate (if you put '0' then the block will not regen)
+    regen-time: 30
+  crops:
+    hardness: 5
+    strength: 300
+    replace-with: 'air'
+    regen-time: 30
+  test_block_id:
+    hardness: 1
+    strength: 999999
+    replace-with: 'obsidian'
+    regen-time: 30
+
+#Custom blocks depend on regions, you must define the region ID
+#as the primary key followed by the vanilla block id as the secondary key
+#and the new block id as the value
+
+#You don't have to use the full region ID, you can use 'test' instead of 'test4' for example
+custom-block-settings:
+  test:
+    dirt:
+      data: 0
+      id: 'test_block_id'
+      drops:
+        #Custom item ID
+        iron_ingot:
+          #Double percentage chance (1 being equal to 100%)
+          chance: 1
+          #Determines whether mining/farming/foraging fortune effects the drop amounts
+          fortune-effected: true
+          min-amount: 1
+          max-amount: 3
+
+#Settings related to dwarven mines
+dwarven-settings:
+  #Chance (double) for titanium to spawn
+  base-titanium-chance: 0.01
+  commissions:
+    max-daily-commission-bonus: 5
+    min-powder-reward: 150
+    max-powder-reward: 500
+    min-xp-reward: 7500
+    max-xp-reward: 15000
+
+#==================================================================#
+#  --------------- Teleportation Related Settings  --------------- #
+#==================================================================#
+
+#Yaw is the first number displayed within the brackets in f3 mode
+
+worlds:
+  example:
+    spawn-point:
+      x: 0
+      y: 0
+      z: 0
+      pitch: 0.0
+      yaw: 0.0
+  world_gold_mine:
+    spawn-point:
+      x: -5
+      y: 74
+      z: -275
+      pitch: -4.500077
+      yaw: -194.84949
+warps:
+  goldmine:
+    world: world_gold_mine
+    x: -5
+    y: 74
+    z: -275
+    pitch: -4.500077
+    yaw: -194.84949
+    deepcaverns_coal:
+      world: world_deep_caverns
+      x: 52
+      y: 150
+      z: 15
+      pitch: 90.2
+      yaw: 5.4
+    deepcaverns_lapis:
+      world: world_deep_caverns
+      x: 52
+      y: 121
+      z: 15
+      pitch: 90.2
+      yaw: 5.4
+    deepcaverns_redstone:
+      world: world_deep_caverns
+      x: 52
+      y: 101
+      z: 15
+      pitch: 90.2
+      yaw: 5.4
+    deepcaverns_emerald:
+      world: world_deep_caverns
+      x: 52
+      y: 66
+      z: 15
+      pitch: 90.2
+      yaw: 5.4
+    deepcaverns_diamond:
+      world: world_deep_caverns
+      x: 52
+      y: 38
+      z: 15
+      pitch: 90.2
+      yaw: 5.4
+    deepcaverns_obsidian:
+      world: world_deep_caverns
+      x: 52
+      y: 13
+      z: 15
+      pitch: 90.2
+      yaw: 5.4
+island-pads:
+  leap_gold_mine:
+    warp-to: goldmine
+
+mob-spawns:
+  ice_walker:
+    spawn-points:
+      1:
+        world: world_dwarven_mines
+        x: 15
+        y: 128
+        z: 171
+        yaw: 178
+        pitch: -2.2
+      2:
+        world: world_dwarven_mines
+        x: 2
+        y: 128
+        z: 166
+        yaw: 178
+        pitch: -2.2
+      3:
+        world: world_dwarven_mines
+        x: -14
+        y: 128
+        z: 161
+        yaw: 178
+        pitch: -2.2
+      4:
+        world: world_dwarven_mines
+        x: -14
+        y: 128
+        z: 175
+        yaw: 178
+        pitch: -2.2
