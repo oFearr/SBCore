@@ -22,7 +22,7 @@ public class PlayerDataManager {
         if (!cfile.exists()) {
             try {
                 cfile.createNewFile();
-                System.out.println("[SkyBlock] Successfully crated userdata file for " + p.getName() + "!");
+                System.out.println("[SkyBlock] Successfully created userdata file for " + p.getName() + "!");
             } catch(Exception e) {
             }
         }
@@ -35,7 +35,7 @@ public class PlayerDataManager {
         if (!cfile.exists()) {
             try {
                 cfile.createNewFile();
-                System.out.println("[SkyBlock] Successfully crated userdata file for " + p.getName() + "!");
+                System.out.println("[SkyBlock] Successfully created userdata file for " + p.getName() + "!");
             } catch(Exception e) {
             }
         }
