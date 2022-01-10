@@ -1,5 +1,5 @@
 # SBCore
-Similar to a large Skyblock server which also has other mini games (Hy...) - This is not a standalone codebase, references some of my other private projects.
+Similar to Hypixel's Skyblock - This is not a standalone codebase, references some of my other private projects.
 
 ![Image](https://i.imgur.com/igZD2MO.png)
 ![Image](https://i.imgur.com/LqpuwiH.png)
