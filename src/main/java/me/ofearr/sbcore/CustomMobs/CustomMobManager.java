@@ -1,5 +1,6 @@
 package me.ofearr.sbcore.CustomMobs;
 
+import me.ofearr.sbcore.CustomMobs.Mobs.Goblin;
 import me.ofearr.sbcore.CustomMobs.Mobs.IceWalker;
 import me.ofearr.sbcore.SBCore;
 import net.citizensnpcs.api.CitizensAPI;
@@ -23,6 +24,7 @@ public class CustomMobManager {
 
     public static void setRegisteredCustomMobs(){
         new IceWalker().setRegistered();
+        new Goblin().setRegistered();
 
         startMobSpawns();
     }

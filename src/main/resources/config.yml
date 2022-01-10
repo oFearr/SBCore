@@ -47,6 +47,29 @@ custom-block-settings:
 dwarven-settings:
   #Chance (double) for titanium to spawn
   base-titanium-chance: 0.01
+  monoliths:
+    base-monolith-chance: 0.0025
+    magical:
+      rewards:
+        1:
+          messages:
+            - "&aWow! You found 10,000,000 in this Monolith!"
+          commands:
+            - "eco give <player> 10000000"
+    shiny:
+      rewards:
+        1:
+          messages:
+            - "&aWow! You found 5,000,000 in this Monolith!"
+          commands:
+            - "eco give <player> 5000000"
+    eroded:
+      rewards:
+        1:
+          messages:
+            - "&aWow! You found 1,500,000 in this Monolith!"
+          commands:
+            - "eco give <player> 1500000"
   commissions:
     max-daily-commission-bonus: 5
     min-powder-reward: 150

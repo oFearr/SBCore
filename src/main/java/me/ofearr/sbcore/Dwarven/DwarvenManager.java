@@ -4,6 +4,7 @@ import me.ofearr.customitems.Items.ItemManager;
 import me.ofearr.sbcore.Dwarven.Commissions.DwarvenCommission;
 import me.ofearr.sbcore.Dwarven.Commissions.MiningCommissions.Location.*;
 import me.ofearr.sbcore.Dwarven.Commissions.MiningCommissions.*;
+import me.ofearr.sbcore.Dwarven.Commissions.MiscCommissions.GoblinSlayerCommission;
 import me.ofearr.sbcore.Dwarven.Commissions.MiscCommissions.IceWalkerSlayerCommission;
 import me.ofearr.sbcore.Dwarven.Commissions.MiscCommissions.MonolithExaminerCommission;
 import me.ofearr.sbcore.Dwarven.Commissions.MiscCommissions.PowderCollectorCommission;
@@ -17,6 +18,8 @@ import me.ofearr.sbcore.Dwarven.Upgrades.Tier6Upgrades.*;
 import me.ofearr.sbcore.Dwarven.Upgrades.Tier7Upgrades.*;
 import me.ofearr.sbcore.PlayerData.PlayerDataManager;
 import me.ofearr.sbcore.Utils.StringUtils;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -28,6 +31,7 @@ public class DwarvenManager {
     private static HashMap<UUID, Integer> dailyCommissionsCount = new HashMap<>();
     public static HashMap<UUID, List<Integer>> commissionCompletionAlertedPlayers = new HashMap<>();
     public static HashMap<UUID, List<Integer>> forgeCompletionAlertedPlayers = new HashMap<>();
+    private static HashMap<Location, DwarvenMonolith> spawnedMonoliths = new HashMap<>();
 
     public static void setRegisteredUpgrades(){
         //T1 Upgrades
@@ -91,6 +95,7 @@ public class DwarvenManager {
         new MonolithExaminerCommission().registerCommission();
         new PowderCollectorCommission().registerCommission();
         new IceWalkerSlayerCommission().registerCommission();
+        new GoblinSlayerCommission().registerCommission();
 
     }
 
@@ -233,5 +238,21 @@ public class DwarvenManager {
         int upgradeLevel = dataManager.getConfig().getInt("dwarven-data.level");
 
         return upgradeLevel;
+    }
+
+    public static void registerMonolithAtLocation(Location loc, DwarvenMonolith monolith){
+        spawnedMonoliths.put(loc, monolith);
+    }
+
+    public static void despawnMonolith(Location loc){
+        if(loc.getBlock().getType() == Material.DRAGON_EGG){
+            loc.getBlock().setType(Material.AIR);
+
+            spawnedMonoliths.remove(loc);
+        }
+    }
+
+    public static HashMap<Location, DwarvenMonolith> getSpawnedMonoliths(){
+        return spawnedMonoliths;
     }
 }

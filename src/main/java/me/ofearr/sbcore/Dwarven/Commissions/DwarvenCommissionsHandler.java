@@ -120,6 +120,11 @@ public class DwarvenCommissionsHandler {
 
                 dwarvenUtils.setPlayerCommissionProgress(player, slot, progress);
                 break;
+
+            } else if(id.equalsIgnoreCase("goblin_slayer") && mobID.equalsIgnoreCase("goblin")){
+
+                dwarvenUtils.setPlayerCommissionProgress(player, slot, progress);
+                break;
             }
 
             slot++;
