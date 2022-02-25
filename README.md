@@ -2,7 +2,7 @@
 Similar to Hypixel's Skyblock - This is not a standalone codebase, references some of my other private projects.
 
 - Added Goblin Custom Entities to Dwarven Mines
-- Added Monoliths to Dwarven Mines
+- Added Monoliths to Dwarven Mines which spawn in random locations
 - Fixed commission completion notifications not being sent for the first progress gained that day
 
 ![Image](https://i.imgur.com/igZD2MO.png)
