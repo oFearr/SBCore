@@ -26,11 +26,11 @@ public class IceWalkerSlayerCommission implements DwarvenCommission {
 
     @Override
     public String description() {
-        return "&7Slay &a" + completionProgress() + "&7 Ice walkers.";
+        return "&7Slay &a" + requiredCountForCompletion() + "&7 Ice walkers.";
     }
 
     @Override
-    public int completionProgress() {
+    public int requiredCountForCompletion() {
         return 75;
     }
 

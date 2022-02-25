@@ -26,11 +26,11 @@ public class PowderCollectorCommission implements DwarvenCommission {
 
     @Override
     public String description() {
-        return "&7Collect &a" + completionProgress() + "&7 Mithril powder.";
+        return "&7Collect &a" + requiredCountForCompletion() + "&7 Mithril powder.";
     }
 
     @Override
-    public int completionProgress() {
+    public int requiredCountForCompletion() {
         return 2500;
     }
 

@@ -48,26 +48,44 @@ dwarven-settings:
   #Chance (double) for titanium to spawn
   base-titanium-chance: 0.01
   monoliths:
+    nearby-spawn-message: "&e&oYou hear the sound of rocks shifting nearby!"
+    spawn-interval: 10000
+    spawn-locations:
+      1:
+        world: world_dwarven_mines
+        x: 15
+        y: 128
+        z: 171
+      2:
+        world: world_dwarven_mines
+        x: 2
+        y: 128
+        z: 166
+      3:
+        world: world_dwarven_mines
+        x: -14
+        y: 128
+        z: 161
     base-monolith-chance: 0.0025
     magical:
       rewards:
         1:
           messages:
-            - "&aWow! You found 10,000,000 in this Monolith!"
+            - "&aWow! You found &610,000,000 Coins &ain this Monolith!"
           commands:
             - "eco give <player> 10000000"
     shiny:
       rewards:
         1:
           messages:
-            - "&aWow! You found 5,000,000 in this Monolith!"
+            - "&aWow! You found &65,000,000 Coins &ain this Monolith!"
           commands:
             - "eco give <player> 5000000"
     eroded:
       rewards:
         1:
           messages:
-            - "&aWow! You found 1,500,000 in this Monolith!"
+            - "&aWow! You found &61,500,000 Coins &ain this Monolith!"
           commands:
             - "eco give <player> 1500000"
   commissions:

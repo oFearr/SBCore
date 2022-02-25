@@ -10,7 +10,6 @@ import me.ofearr.skillcore.Skills.SkillManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -89,7 +88,7 @@ public class DwarvenCommissionsGUIHandler implements Listener {
 
         commissionLore.add(" ");
 
-        int requiredProgress = commission.completionProgress();
+        int requiredProgress = commission.requiredCountForCompletion();
         int currentProgress = dwarvenUtils.getPlayerCommissionProgress(player, commissionSlot);
 
         if(currentProgress >= requiredProgress){

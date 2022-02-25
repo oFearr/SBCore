@@ -2,6 +2,7 @@ package me.ofearr.sbcore.Dwarven.Commissions;
 
 import me.ofearr.sbcore.Areas.AreaManager;
 import me.ofearr.sbcore.Dwarven.DwarvenUtils;
+import me.ofearr.sbcore.Dwarven.Monolith;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -125,6 +126,26 @@ public class DwarvenCommissionsHandler {
 
                 dwarvenUtils.setPlayerCommissionProgress(player, slot, progress);
                 break;
+            }
+
+            slot++;
+        }
+    }
+
+    public void handleMonolithCollected(Player player, Monolith monolithType){
+        List<String> commissionIDs = dwarvenUtils.getAllPlayerCommissionIDs(player);
+
+        int slot = 1;
+        for(String id : commissionIDs){
+            int progress = dwarvenUtils.getPlayerCommissionProgress(player, slot);
+
+            progress ++;
+
+            if(id.equalsIgnoreCase("monolith_examiner")){
+
+                dwarvenUtils.setPlayerCommissionProgress(player, slot, progress);
+                break;
+
             }
 
             slot++;

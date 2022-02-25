@@ -71,7 +71,7 @@ public class DwarvenTablist {
                 } else {
 
                     DwarvenCommission commission = DwarvenManager.getDwarvenCommission(commission1ID);
-                    int requiredProgress = commission.completionProgress();
+                    int requiredProgress = commission.requiredCountForCompletion();
                     int currentProgress = dwarvenUtils.getPlayerCommissionProgress(player, 1);
 
                     double percentFinishedCommission = (double) currentProgress / (double) requiredProgress * 100;
@@ -87,7 +87,7 @@ public class DwarvenTablist {
                 } else {
 
                     DwarvenCommission commission = DwarvenManager.getDwarvenCommission(commission2ID);
-                    int requiredProgress = commission.completionProgress();
+                    int requiredProgress = commission.requiredCountForCompletion();
                     int currentProgress = dwarvenUtils.getPlayerCommissionProgress(player, 2);
 
                     double percentFinishedCommission = (double) currentProgress / (double) requiredProgress * 100;
@@ -111,7 +111,7 @@ public class DwarvenTablist {
                 } else {
 
                     DwarvenCommission commission = DwarvenManager.getDwarvenCommission(commission3ID);
-                    int requiredProgress = commission.completionProgress();
+                    int requiredProgress = commission.requiredCountForCompletion();
                     int currentProgress = dwarvenUtils.getPlayerCommissionProgress(player, 3);
 
                     double percentFinishedCommission = (double) currentProgress / (double) requiredProgress * 100;
@@ -133,7 +133,7 @@ public class DwarvenTablist {
                     commission4Name = StringUtils.translate("&fTalk to the &6&lKing");
                 } else {
                     DwarvenCommission commission = DwarvenManager.getDwarvenCommission(commission4ID);
-                    int requiredProgress = commission.completionProgress();
+                    int requiredProgress = commission.requiredCountForCompletion();
                     int currentProgress = dwarvenUtils.getPlayerCommissionProgress(player, 4);
 
                     double percentFinishedCommission = (double) currentProgress / (double) requiredProgress * 100;
@@ -275,7 +275,7 @@ public class DwarvenTablist {
             } else {
 
                 DwarvenCommission commission = DwarvenManager.getDwarvenCommission(commission1ID);
-                int requiredProgress = commission.completionProgress();
+                int requiredProgress = commission.requiredCountForCompletion();
                 int currentProgress = dwarvenUtils.getPlayerCommissionProgress(player, 1);
 
                 double percentFinishedCommission = (double) currentProgress / (double) requiredProgress * 100;
@@ -287,7 +287,7 @@ public class DwarvenTablist {
             } else {
 
                 DwarvenCommission commission = DwarvenManager.getDwarvenCommission(commission2ID);
-                int requiredProgress = commission.completionProgress();
+                int requiredProgress = commission.requiredCountForCompletion();
                 int currentProgress = dwarvenUtils.getPlayerCommissionProgress(player, 2);
 
                 double percentFinishedCommission = (double) currentProgress / (double) requiredProgress * 100;
@@ -307,7 +307,7 @@ public class DwarvenTablist {
             } else {
 
                 DwarvenCommission commission = DwarvenManager.getDwarvenCommission(commission3ID);
-                int requiredProgress = commission.completionProgress();
+                int requiredProgress = commission.requiredCountForCompletion();
                 int currentProgress = dwarvenUtils.getPlayerCommissionProgress(player, 3);
 
                 double percentFinishedCommission = (double) currentProgress / (double) requiredProgress * 100;
@@ -325,7 +325,7 @@ public class DwarvenTablist {
                 commission4Name = StringUtils.translate("&fTalk to the &6&lKing");
             } else {
                 DwarvenCommission commission = DwarvenManager.getDwarvenCommission(commission4ID);
-                int requiredProgress = commission.completionProgress();
+                int requiredProgress = commission.requiredCountForCompletion();
                 int currentProgress = dwarvenUtils.getPlayerCommissionProgress(player, 4);
 
                 double percentFinishedCommission = (double) currentProgress / (double) requiredProgress * 100;

@@ -7,7 +7,7 @@ public interface DwarvenCommission {
     int commissionPool2();
 
     String description();
-    int completionProgress();
+    int requiredCountForCompletion();
 
     void registerCommission();
 

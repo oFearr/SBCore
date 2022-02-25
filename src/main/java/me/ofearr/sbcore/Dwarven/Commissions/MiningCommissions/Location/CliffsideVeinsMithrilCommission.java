@@ -26,11 +26,11 @@ public class CliffsideVeinsMithrilCommission implements DwarvenCommission {
 
     @Override
     public String description() {
-        return "&7Mine &a" + completionProgress() + "&7 Mithril in the Cliffside Veins.";
+        return "&7Mine &a" + requiredCountForCompletion() + "&7 Mithril in the Cliffside Veins.";
     }
 
     @Override
-    public int completionProgress() {
+    public int requiredCountForCompletion() {
         return 350;
     }
 

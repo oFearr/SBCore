@@ -17,14 +17,20 @@ import me.ofearr.sbcore.Dwarven.Upgrades.Tier5Upgrades.*;
 import me.ofearr.sbcore.Dwarven.Upgrades.Tier6Upgrades.*;
 import me.ofearr.sbcore.Dwarven.Upgrades.Tier7Upgrades.*;
 import me.ofearr.sbcore.PlayerData.PlayerDataManager;
+import me.ofearr.sbcore.SBCore;
 import me.ofearr.sbcore.Utils.StringUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.*;
 
 public class DwarvenManager {
+    private static SBCore plugin;
+
     private static LinkedHashMap<String, DwarvenUpgrade> registeredUpgrades = new LinkedHashMap<>();
     private static HashMap<Integer, List<DwarvenCommission>> dwarvenCommissionPools = new HashMap<>();
     private static HashMap<String, DwarvenCommission> registeredDwarvenCommissions = new HashMap<>();
@@ -32,6 +38,10 @@ public class DwarvenManager {
     public static HashMap<UUID, List<Integer>> commissionCompletionAlertedPlayers = new HashMap<>();
     public static HashMap<UUID, List<Integer>> forgeCompletionAlertedPlayers = new HashMap<>();
     private static HashMap<Location, DwarvenMonolith> spawnedMonoliths = new HashMap<>();
+
+    public DwarvenManager(SBCore sbCore) {
+        this.plugin = sbCore;
+    }
 
     public static void setRegisteredUpgrades(){
         //T1 Upgrades
@@ -244,15 +254,39 @@ public class DwarvenManager {
         spawnedMonoliths.put(loc, monolith);
     }
 
-    public static void despawnMonolith(Location loc){
-        if(loc.getBlock().getType() == Material.DRAGON_EGG){
-            loc.getBlock().setType(Material.AIR);
-
-            spawnedMonoliths.remove(loc);
-        }
-    }
-
     public static HashMap<Location, DwarvenMonolith> getSpawnedMonoliths(){
         return spawnedMonoliths;
+    }
+
+    public static void removeMonolithFromMap(Location location){
+        if(spawnedMonoliths.containsKey(location)) spawnedMonoliths.remove(location);
+    }
+
+    public void spawnMonolithInWorld(long interval){
+
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                Set<String> spawnLocations = plugin.getConfig().getConfigurationSection("dwarven-settings.monoliths.spawn-locations").getKeys(false);
+
+                Random random = new Random();
+                String selSpawn = (String) spawnLocations.toArray()[random.nextInt(spawnLocations.size())];
+
+                try {
+                    double x = plugin.getConfig().getDouble("dwarven-settings.monoliths.spawn-locations." + selSpawn + ".x");
+                    double y = plugin.getConfig().getDouble("dwarven-settings.monoliths.spawn-locations." + selSpawn + ".y");
+                    double z = plugin.getConfig().getDouble("dwarven-settings.monoliths.spawn-locations." + selSpawn + ".z");
+
+                    World world = Bukkit.getWorld(plugin.getConfig().getString("dwarven-settings.monoliths.spawn-locations." + selSpawn + ".world"));
+
+                    Location loc = new Location(world, x, y, z);
+
+                    new DwarvenMonolith(loc);
+
+                }catch (NumberFormatException ex){
+                    Bukkit.getLogger().severe("Invalid DwarvenMonolith spawn location '" + selSpawn + "'!");
+                }
+            }
+        }.runTaskLater(plugin, interval);
     }
 }

@@ -26,11 +26,11 @@ public class RampartsQuarryMithrilCommission implements DwarvenCommission {
 
     @Override
     public String description() {
-        return "&7Mine &a" + completionProgress() + "&7 Mithril in Rampart's Quarry.";
+        return "&7Mine &a" + requiredCountForCompletion() + "&7 Mithril in Rampart's Quarry.";
     }
 
     @Override
-    public int completionProgress() {
+    public int requiredCountForCompletion() {
         return 350;
     }
 

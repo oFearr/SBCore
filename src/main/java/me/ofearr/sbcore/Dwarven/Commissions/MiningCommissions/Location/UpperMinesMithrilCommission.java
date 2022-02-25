@@ -26,11 +26,11 @@ public class UpperMinesMithrilCommission implements DwarvenCommission {
 
     @Override
     public String description() {
-        return "&7Mine &a" + completionProgress() + "&7 Mithril in the Upper Mines.";
+        return "&7Mine &a" + requiredCountForCompletion() + "&7 Mithril in the Upper Mines.";
     }
 
     @Override
-    public int completionProgress() {
+    public int requiredCountForCompletion() {
         return 350;
     }
 

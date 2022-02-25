@@ -26,11 +26,11 @@ public class GoblinSlayerCommission implements DwarvenCommission {
 
     @Override
     public String description() {
-        return "&7Slay &a" + completionProgress() + "&7 Goblins.";
+        return "&7Slay &a" + requiredCountForCompletion() + "&7 Goblins.";
     }
 
     @Override
-    public int completionProgress() {
+    public int requiredCountForCompletion() {
         return 50;
     }
 

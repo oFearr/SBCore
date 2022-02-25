@@ -17,9 +17,11 @@ import me.ofearr.sbcore.CustomMobs.CustomMobManager;
 import me.ofearr.sbcore.CustomMobs.Traits.IceWalkerTrait;
 import me.ofearr.sbcore.Dwarven.Commissions.DwarvenCommissionsGUIHandler;
 import me.ofearr.sbcore.Dwarven.DwarvenManager;
+import me.ofearr.sbcore.Dwarven.DwarvenMonolith;
 import me.ofearr.sbcore.Dwarven.Forge.ForgeGUIHandler;
 import me.ofearr.sbcore.Dwarven.Forge.ForgeManager;
 import me.ofearr.sbcore.Dwarven.HeartOfTheMountain.HotMMenuHandler;
+import me.ofearr.sbcore.Dwarven.MiscDwarvenEvents;
 import me.ofearr.sbcore.Events.ActionBarManager;
 import me.ofearr.sbcore.Events.DamageCalculationEvent;
 import me.ofearr.sbcore.Events.MiscEvents;
@@ -90,7 +92,7 @@ public final class SBCore extends JavaPlugin {
         this.collectionsManager = new CollectionsManager();
         collectionsManager.setRegisteredCollections();
 
-        this.dwarvenManager = new DwarvenManager();
+        this.dwarvenManager = new DwarvenManager(this);
         dwarvenManager.setRegisteredUpgrades();
         dwarvenManager.setRegisteredDwarvenCommissions();
         ForgeManager.setRegisteredForgeItems();
@@ -188,6 +190,7 @@ public final class SBCore extends JavaPlugin {
 
         }
 
+        if(isEnabling) dwarvenManager.spawnMonolithInWorld(getConfig().getInt("dwarven-settings.monoliths.spawn-interval"));
     }
 
     public void enableSBMenuItemRegen(){
@@ -290,8 +293,9 @@ public final class SBCore extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new ForgeGUIHandler(this), this);
         Bukkit.getPluginManager().registerEvents(new ShopGUIHandler(this), this);
         Bukkit.getPluginManager().registerEvents(new MiscGUIHandlers(this), this);
-
         Bukkit.getPluginManager().registerEvents(new MiningCollectionsHandler(this), this);
+
+        Bukkit.getPluginManager().registerEvents(new MiscDwarvenEvents(this), this);
     }
 
     public static Economy getEconomy() {

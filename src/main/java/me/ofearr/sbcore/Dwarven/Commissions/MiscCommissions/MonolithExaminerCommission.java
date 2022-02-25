@@ -26,11 +26,11 @@ public class MonolithExaminerCommission implements DwarvenCommission {
 
     @Override
     public String description() {
-        return "&7Discover &a" + completionProgress() + "&7 Ancient Monolith.";
+        return "&7Discover &a" + requiredCountForCompletion() + "&7 Ancient Monolith.";
     }
 
     @Override
-    public int completionProgress() {
+    public int requiredCountForCompletion() {
         return 1;
     }
 

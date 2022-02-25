@@ -119,9 +119,8 @@ public class DwarvenUtils {
         dataManager.saveConfig();
 
         HeartOfTheMountain heartOfTheMountain = new HeartOfTheMountain();
-        DwarvenManager dwarvenManager = new DwarvenManager();
 
-        int hotmLevel = dwarvenManager.getHOTMLevel(player);
+        int hotmLevel = DwarvenManager.getHOTMLevel(player);
         int nextHOTMLevel = hotmLevel + 1;
         int requiredXP = heartOfTheMountain.getRequiredXPForLevel(nextHOTMLevel);
         int currentXP = xp;
@@ -406,15 +405,17 @@ public class DwarvenUtils {
 
             dwarvenManager.commissionCompletionAlertedPlayers.put(player.getUniqueId(), slotList);
 
-        } else if(!dwarvenManager.commissionCompletionAlertedPlayers.get(player.getUniqueId()).contains(slot)){
+        }
+
+        if(!dwarvenManager.commissionCompletionAlertedPlayers.get(player.getUniqueId()).contains(slot)){
             String commissionID = getPlayerCommissionID(player, slot);
 
             DwarvenCommission dwarvenCommission = plugin.dwarvenManager.getDwarvenCommission(commissionID);
 
             if(dwarvenCommission != null){
-                int required = dwarvenCommission.completionProgress();
+                int required = dwarvenCommission.requiredCountForCompletion();
 
-                if(progress >=  required){
+                if(progress >= required){
                     player.sendMessage(StringUtils.translate("&aYou've finished the " + dwarvenCommission.commissionName() + " &acommission, visit the &6&lKing &aor one of his &6Emissaries &ato claim your rewards!"));
 
                     dwarvenManager.commissionCompletionAlertedPlayers.get(player.getUniqueId()).add(slot);

@@ -101,7 +101,7 @@ public class DwarvenCommissionsGUI {
 
             commissionLore.add(" ");
 
-            int requiredProgress = commission.completionProgress();
+            int requiredProgress = commission.requiredCountForCompletion();
             int currentProgress = dwarvenUtils.getPlayerCommissionProgress(player, i);
 
             if(currentProgress >= requiredProgress){

@@ -26,11 +26,11 @@ public class TitaniumMinerCommission implements DwarvenCommission {
 
     @Override
     public String description() {
-        return "&7Mine &a" + completionProgress() + "&7 Titanium anywhere.";
+        return "&7Mine &a" + requiredCountForCompletion() + "&7 Titanium anywhere.";
     }
 
     @Override
-    public int completionProgress() {
+    public int requiredCountForCompletion() {
         return 15;
     }
 

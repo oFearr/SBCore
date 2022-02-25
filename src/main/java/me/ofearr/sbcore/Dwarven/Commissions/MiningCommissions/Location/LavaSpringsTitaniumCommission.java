@@ -26,11 +26,11 @@ public class LavaSpringsTitaniumCommission implements DwarvenCommission {
 
     @Override
     public String description() {
-        return "&7Mine &a" + completionProgress() + "&7 Titanium in the Lava Springs.";
+        return "&7Mine &a" + requiredCountForCompletion() + "&7 Titanium in the Lava Springs.";
     }
 
     @Override
-    public int completionProgress() {
+    public int requiredCountForCompletion() {
         return 10;
     }
 
